@@ -1,0 +1,40 @@
+.container {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 10vh 50vh 40vh;
+    grid-template-areas: "input filt"
+                         "todo filt"
+                         "done stats";
+}
+
+.todo {
+    grid-area: todo;
+}
+
+.filter {
+    grid-area: filt;
+}
+
+.done {
+    grid-area: done;
+}
+
+.stats {
+    grid-area: stats;
+}
+
+.input {
+    grid-area: input;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: 10vh 30vh 50vh 40vh 20vh;
+        grid-template-areas: "input"
+                             "filt"
+                             "todo"
+                             "done"
+                             "stats";
+    }
+}
