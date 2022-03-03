@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from 'src/app/model/task';
 
 @Component({
@@ -10,10 +10,19 @@ export class TaskListElementComponent implements OnInit {
 
   @Input() task?: Task;
 
+  @Output() doneEvent: EventEmitter<string>;
+
   constructor() {
+    this.doneEvent = new EventEmitter<string>();
   }
 
   ngOnInit(): void {
+  }
+
+  taskDone() {
+    if (this.task) {
+      this.doneEvent.emit(this.task.id);  
+    }
   }
 
 }
