@@ -11,6 +11,7 @@ import { DoneListComponent } from './components/done-list/done-list.component';
 import { TaskInputComponent } from './components/task-input/task-input.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { TaskListElementComponent } from './components/task-list-element/task-list-element.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     DoneListComponent,
     TaskInputComponent,
     FilterComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    TaskListElementComponent
   ],
   imports: [
     BrowserModule,

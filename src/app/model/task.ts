@@ -1,23 +1,21 @@
-class Task {
-    
-    name: string;
-    creationDate: Date;
-    doneDate: Date;
-    priority: string;
-    tag: string;
-    comment: string;
-    repeat: string;
-    date: Date;
+export class Task {
 
-    constructor(name: string, creationDate: Date, doneDate: Date, priority: string, tag: string, comment: string, repeat: string, date: Date) {
-        this.name = name;
-        this.creationDate = creationDate;
-        this.doneDate = doneDate;
-        this.priority = priority;
-        this.tag = tag;
-        this.comment = comment;
-        this.repeat = repeat;
-        this.date = date;
-    }
+  name: string;
+  comment?: string;
+
+  tag?: string[];
+
+  creationDate: Date;
+  doneDate?: Date;
+  dueDate?: Date;
+
+  priority: number;
+  repeat?: number;
+
+  constructor(name: string, priority: number = 0) {
+    this.name = name;
+    this.priority = priority;
+    this.creationDate = new Date(); // Prende la data di adesso, di quando viene creato l'oggetto.
+  }
 
 }
