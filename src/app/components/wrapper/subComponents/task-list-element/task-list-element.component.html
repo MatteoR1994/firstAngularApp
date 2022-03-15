@@ -1,10 +1,19 @@
 <div *ngIf="task" class="container">
-  <div class="data-container">
-    <span class="task-name">{{task.name}}</span>
-    <span>{{task.creationDate.toISOString()}}</span>
-    <span>Priority: {{task.priority}}</span>
-    <span>ID: {{task.id}}</span>
-  </div>
-  
-  <button class="icon-btn" (click)="taskDone()"><img class="icon" src="./assets/images/done.svg" alt="Icona task fatto"></button>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{task.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Priority: {{task.priority}}
+          <mat-icon (click)="taskDone()">done</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="data-container">
+        <span>{{task.creationDate}}</span>
+        <span>ID: {{task.id}}</span>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
