@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +20,7 @@ import { TaskListElementComponent } from './components/wrapper/subComponents/tas
 import { ToDoListComponent } from './components/wrapper/subComponents/to-do-list/to-do-list.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavTutorialComponent } from './components/sidenav-tutorial/sidenav-tutorial.component';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FilterComponent,
     StatisticsComponent,
     TaskListElementComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SidenavTutorialComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatButtonModule,
     MatExpansionModule,
+    MatSidenavModule,
     HttpClientModule
   ],
   providers: [],

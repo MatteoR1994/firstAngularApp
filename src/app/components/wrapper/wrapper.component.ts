@@ -11,5 +11,4 @@ export class WrapperComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
