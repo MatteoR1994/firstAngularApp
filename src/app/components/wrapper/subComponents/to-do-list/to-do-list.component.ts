@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/model/task';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,13 +9,10 @@ import { Task } from 'src/app/model/task';
 })
 export class ToDoListComponent implements OnInit {
 
-  taskList: Task[];
+  taskList: Task[] = [];
 
-  constructor() {
-    let task1 = new Task('Studia Javascript', 10);
-    let task2 = new Task('Studia Angular', 10);
-    let task3 = new Task('Studia Angular', 10);
-    this.taskList = [task1, task2, task3];
+  constructor(private api: ApiService) {
+    this.api.getActiveTask().subscribe(data => this.taskList=data);
   }
 
   ngOnInit(): void {

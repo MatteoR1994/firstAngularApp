@@ -1,5 +1,4 @@
 export class Task {
-
   id: string;
   name: string;
   comment?: string;
@@ -13,15 +12,31 @@ export class Task {
   priority: number;
   repeat?: number;
 
-  constructor(name: string, priority: number = 0) {
+  constructor(id:string ,name: string, priority: number = 0,creationDate?:number){
     this.name = name;
-    this.priority = priority;
-    this.creationDate = new Date(); // Prende la data di adesso, di quando viene creato l'oggetto.
-    this.id = name.split(' ')[0] + Task.generateRandom();
+    this.priority = Task.getFirstNumber(priority)
+    if(creationDate){
+      this.creationDate = new Date(creationDate) ; 
+    }else{
+      this.creationDate= new Date();
+    }
+    this.creationDate = new Date();
+    this.id = id;
   }
 
-  static generateRandom(): number {
-    return Math.floor(Math.random() * 1000000);
+
+  static getFirstNumber(fullNumber:number):number{
+
+    const stringNumber = String(fullNumber);
+    const firstChar = stringNumber.charAt(0);
+    const firstCharNumber = Number(firstChar);
+
+   return firstCharNumber;
+
+   
   }
+  // static generateRandom(): number{
+  //   return Math.floor(Math.random() * 1000000);
+  // }
 
 }

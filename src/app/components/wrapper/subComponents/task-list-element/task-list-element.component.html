@@ -12,6 +12,7 @@
       </mat-expansion-panel-header>
       <div class="data-container">
         <span>{{task.creationDate}}</span>
+        <span *ngIf="task.doneDate">{{task.doneDate}}</span>
         <span>ID: {{task.id}}</span>
       </div>
     </mat-expansion-panel>
