@@ -8,12 +8,13 @@ import { ComService } from 'src/app/services/com.service';
 })
 export class WrapperComponent implements OnInit {
 
+  opened :boolean=false;
+
   constructor(private comS: ComService) { }
 
   ngOnInit(): void {
     this.comS.isDrawerOpen.subscribe(isOpen => {
-      console.log('drawer open: ', isOpen);
-      
+      this.opened=isOpen;      
     });
   }
 }

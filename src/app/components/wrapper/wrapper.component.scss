@@ -1,40 +1,61 @@
-.container {
+.container{
     display: grid;
-    grid-template-columns: 7fr 3fr;
+
+    grid-template-columns: 100%;
     grid-template-rows: 10vh 50vh 40vh;
-    grid-template-areas: "input filt"
-                         "todo filt"
-                         "done stats";
+    grid-template-areas: "input"
+                         "todo"
+                         "done";
+    // grid-template-columns: 7fr 3fr;
+    // grid-template-rows: 10vh 50vh 40vh;
+    // grid-template-areas: "input filt"
+    //                      "todo filt"
+    //                      "done stats";
 }
 
-.todo {
+.todo{
     grid-area: todo;
 }
 
-.filter {
-    grid-area: filt;
-}
-
-.done {
+.done{
     grid-area: done;
 }
 
-.stats {
-    grid-area: stats;
-}
-
-.input {
+.input{
     grid-area: input;
 }
 
+
+
 @media (max-width: 600px) {
-    .container {
+    .container{
         grid-template-columns: 100%;
-        grid-template-rows: 10vh 30vh 50vh 40vh 20vh;
+        grid-template-rows: 10vh 50vh 40vh;
         grid-template-areas: "input"
-                             "filt"
                              "todo"
                              "done"
-                             "stats";
+                             ;
+        // grid-template-columns: 100%;
+        // grid-template-rows: 10vh 30vh 50vh 40vh 20vh;
+        // grid-template-areas: "input"
+        //                      "filt"
+        //                      "todo"
+        //                      "done"
+        //                      "stats";
     }
 }
+
+
+  
+  .sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    width: 25%;
+    
+  }
+  

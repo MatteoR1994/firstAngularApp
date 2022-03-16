@@ -1,6 +1,6 @@
 <header>
     <mat-toolbar color="primary">
-        <button mat-icon-button  (click)="menuClicked()">
+        <button mat-icon-button *ngIf="!isWelcome" (click)="menuClicked()">
             <mat-icon>menu</mat-icon>
         </button>
         <span>Super To-Do List</span>
