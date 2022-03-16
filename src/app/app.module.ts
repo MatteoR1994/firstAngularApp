@@ -20,7 +20,6 @@ import { TaskListElementComponent } from './components/wrapper/subComponents/tas
 import { ToDoListComponent } from './components/wrapper/subComponents/to-do-list/to-do-list.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavTutorialComponent } from './components/sidenav-tutorial/sidenav-tutorial.component';
 
 
 @NgModule({
@@ -35,8 +34,7 @@ import { SidenavTutorialComponent } from './components/sidenav-tutorial/sidenav-
     FilterComponent,
     StatisticsComponent,
     TaskListElementComponent,
-    WelcomeComponent,
-    SidenavTutorialComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
