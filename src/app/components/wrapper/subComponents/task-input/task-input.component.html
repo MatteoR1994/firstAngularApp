@@ -1,3 +1,13 @@
 <div class="container">
-    
+    <div class="input-field-container">
+        <label for="newTaskName">Nome task</label>
+        <input type="text" name="newTaskName" id="newTaskName" #newTaskNameValor>
+    </div>
+    <div class="input-field-container">
+        <label for="newTaskPriority">Priority task</label>
+        <input type="number" name="newTaskPriority" id="newTaskPriority"  #newTaskPriorityValor>
+    </div>
+    <div class="input-field-container">
+        <button (click)="saveNewTask()">INSERISCI</button>
+    </div>
 </div>

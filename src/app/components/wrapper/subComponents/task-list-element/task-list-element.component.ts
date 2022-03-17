@@ -10,10 +10,12 @@ export class TaskListElementComponent implements OnInit {
 
   @Input() task?: Task;
 
-  @Output() doneEvent: EventEmitter<string>;
+  @Output() doneEvent: EventEmitter<Task>;
+  @Output() deletedEvent: EventEmitter<Task>;
 
   constructor() {
-    this.doneEvent = new EventEmitter<string>();
+    this.doneEvent = new EventEmitter<Task>();
+    this.deletedEvent = new EventEmitter<Task>();
   }
 
   ngOnInit(): void {
@@ -21,7 +23,13 @@ export class TaskListElementComponent implements OnInit {
 
   taskDone() {
     if (this.task) {
-      this.doneEvent.emit(this.task.id);  
+      this.doneEvent.emit(this.task);  
+    }
+  }
+
+  taskDeleted() {
+    if (this.task) {
+      this.deletedEvent.emit(this.task);  
     }
   }
 

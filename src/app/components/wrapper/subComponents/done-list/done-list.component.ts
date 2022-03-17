@@ -18,4 +18,8 @@ export class DoneListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  taskDeleted(task: Task) {
+    this.api.deleteTask(task.id).subscribe(response => console.log(response));
+  }
+
 }

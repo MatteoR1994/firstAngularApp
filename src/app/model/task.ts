@@ -12,15 +12,15 @@ export class Task {
   priority: number;
   repeat?: number;
 
-  constructor(id:string ,name: string, priority: number = 0,creationDate?:number){
+  constructor(id: string, name: string, priority: number = 0, creationDate?: number) {
     this.name = name;
-    this.priority = Task.getFirstNumber(priority)
+    this.priority = Task.getFirstNumber(priority);
     if(creationDate){
       this.creationDate = new Date(creationDate) ; 
     }else{
       this.creationDate= new Date();
     }
-    this.creationDate = new Date();
+    //this.creationDate = new Date();
     this.id = id;
   }
 

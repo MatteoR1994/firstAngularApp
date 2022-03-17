@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
 
-  private readonly API_URL = 'https://6229de55be12fc4538aa6c8e.mockapi.io/task';
+  private readonly API_URL = 'https://62334515a3d0e4ac0bde7bd0.mockapi.io/task';
 
   public allTasks$ = new BehaviorSubject<Task[]>([]);
 
@@ -71,7 +71,7 @@ export class ApiService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     task.doneDate = new Date();
-    return this.http.put<Task>(this.API_URL + '/' + task.id, httpOptions).pipe(
+    return this.http.put<Task>(this.API_URL + '/' + task.id, task, httpOptions).pipe(
       map(task => {
         this.getAllTasks();
         return true;
