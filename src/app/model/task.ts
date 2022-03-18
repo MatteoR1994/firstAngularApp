@@ -15,25 +15,27 @@ export class Task {
   constructor(id: string, name: string, priority: number = 0, creationDate?: number) {
     this.name = name;
     this.priority = Task.getFirstNumber(priority);
-    if(creationDate){
+    if (creationDate) {
       this.creationDate = new Date(creationDate) ; 
-    }else{
-      this.creationDate= new Date();
+    } else{
+      this.creationDate = new Date();
     }
-    //this.creationDate = new Date();
     this.id = id;
   }
 
+  toDatabaseModel() {
+    const dbObj: any = { id: this.id, name: this.name, creationDate: this.creationDate.getTime() };
+    if (this.doneDate) {
+      dbObj.doneDate = this.doneDate;
+    }
+    return dbObj;
+  }
 
   static getFirstNumber(fullNumber:number):number{
-
     const stringNumber = String(fullNumber);
     const firstChar = stringNumber.charAt(0);
     const firstCharNumber = Number(firstChar);
-
-   return firstCharNumber;
-
-   
+    return firstCharNumber;
   }
   // static generateRandom(): number{
   //   return Math.floor(Math.random() * 1000000);

@@ -19,7 +19,11 @@ export class DoneListComponent implements OnInit {
   }
 
   taskDeleted(task: Task) {
-    this.api.deleteTask(task.id).subscribe(response => console.log(response));
+    this.api.deleteTask(task.id).subscribe(b => {
+      if (!b) {
+        prompt('errore nel backend');
+      }
+    });
   }
 
 }

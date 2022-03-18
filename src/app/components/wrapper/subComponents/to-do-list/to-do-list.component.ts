@@ -18,8 +18,16 @@ export class ToDoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // taskDone(task: Task) {
+  //   this.api.taskDone(task).subscribe(response => console.log(response));
+  // }
+
   taskDone(task: Task) {
-    this.api.taskDone(task).subscribe(response => console.log(response));
+    this.api.taskDone(task).subscribe(b => {
+      if (!b) {
+        prompt('errore nel backend');
+      }
+    });
   }
 
 }

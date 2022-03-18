@@ -71,7 +71,7 @@ export class ApiService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     task.doneDate = new Date();
-    return this.http.put<Task>(this.API_URL + '/' + task.id, task, httpOptions).pipe(
+    return this.http.put<Task>(this.API_URL + '/' + task.id, task.toDatabaseModel(), httpOptions).pipe(
       map(task => {
         this.getAllTasks();
         return true;
