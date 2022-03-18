@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="input-field-container">
+    <!-- <div class="input-field-container">
         <label for="newTaskName">Nome task</label>
         <input type="text" name="newTaskName" id="newTaskName" #newTaskNameValor>
     </div>
@@ -9,5 +9,24 @@
     </div>
     <div class="input-field-container">
         <button (click)="saveNewTask()">INSERISCI</button>
-    </div>
+    </div> -->
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Task name</mat-label>
+        <input matInput type="text" [(ngModel)]="taskModel.name">
+        <button *ngIf="taskModel.name" matSuffix mat-icon-button aria-label="Clear" (click)="taskModel.name=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Task priority</mat-label>
+        <input matInput type="number" [(ngModel)]="taskModel.priority">
+        <button *ngIf="taskModel.priority" matSuffix mat-icon-button aria-label="Clear" (click)="taskModel.priority=0">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button (click)="saveNewTask()" class="button" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>add</mat-icon>
+      </button>
 </div>

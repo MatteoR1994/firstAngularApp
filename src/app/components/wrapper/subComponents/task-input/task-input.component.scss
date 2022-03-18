@@ -3,38 +3,47 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     background-color: yellow;
 }
 
-.input-field-container {
-    width: 30%;
-    height: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+.example-form-field {
+    margin: 0px 8px;
 }
 
-label {
-    font-weight: bold;
-    color: tomato;
+.button {
+    margin-bottom: 1.34375em;
 }
 
-input {
-    width: 250px;
-    height: 25px;
-    border-radius: 8px;
-}
+// .input-field-container {
+//     width: 30%;
+//     height: 90%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//     align-items: center;
+// }
 
-button {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
-    border-radius: 10px;
-    width: 200px;
-    font-weight: bold;
-    color: black;
-    background-color: orange;
-    cursor: pointer;
-}
+// label {
+//     font-weight: bold;
+//     color: tomato;
+// }
+
+// input {
+//     width: 250px;
+//     height: 25px;
+//     border-radius: 8px;
+// }
+
+// button {
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     padding: 10px;
+//     border-radius: 10px;
+//     width: 200px;
+//     font-weight: bold;
+//     color: black;
+//     background-color: orange;
+//     cursor: pointer;
+// }

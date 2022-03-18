@@ -9,21 +9,32 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class TaskInputComponent implements OnInit {
 
-  @ViewChild('newTaskNameValor') newTaskNameValor: ElementRef | undefined;
-  @ViewChild('newTaskPriorityValor') newTaskPriorityValor: ElementRef | undefined;
+  public taskModel = { name: '', priority: 0 };
+
+  // @ViewChild('newTaskNameValor') newTaskNameValor: ElementRef | undefined;
+  // @ViewChild('newTaskPriorityValor') newTaskPriorityValor: ElementRef | undefined;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  saveNewTask(): void {
-    if (this.newTaskNameValor && this.newTaskPriorityValor) {
-      const newTaskName = this.newTaskNameValor.nativeElement.value;
-      const newTaskPriority = this.newTaskPriorityValor.nativeElement.value;
-      const newTask = new Task('rand', newTaskName, newTaskPriority, new Date().getTime());
-      this.api.createNewTask(newTask).subscribe(response => console.log(response));
-    }
+  // saveNewTask(): void {
+  //   if (this.newTaskNameValor && this.newTaskPriorityValor) {
+  //     const newTaskName = this.newTaskNameValor.nativeElement.value;
+  //     const newTaskPriority = this.newTaskPriorityValor.nativeElement.value;
+  //     const newTask = new Task('rand', newTaskName, newTaskPriority, new Date().getTime());
+  //     this.api.createNewTask(newTask).subscribe(response => console.log(response));
+  //   }
+  // }
+
+  saveNewTask() {
+    const newTask = new Task('', this.taskModel.name, this.taskModel.priority);
+    this.api.createNewTask(newTask.toDatabaseModel()).subscribe(b => {
+      if (!b) {
+        prompt('errore nel beckend');
+      }
+    })
   }
 
 }
