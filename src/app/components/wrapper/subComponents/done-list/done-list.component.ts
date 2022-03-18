@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/model/task';
 import { ApiService } from 'src/app/services/api.service';
+import { Api2Service } from 'src/app/services/api2.service';
 
 @Component({
   selector: 'app-done-list',
@@ -11,8 +12,8 @@ export class DoneListComponent implements OnInit {
 
   doneList: Task[] = [];
 
-  constructor(private api: ApiService) {
-    this.api.getDoneTask().subscribe(data => this.doneList=data);
+  constructor(private api: ApiService, private api2: Api2Service) {
+    
   }
 
   ngOnInit(): void {

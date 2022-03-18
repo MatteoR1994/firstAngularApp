@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/model/task';
 import { ApiService } from 'src/app/services/api.service';
+import { Api2Service } from 'src/app/services/api2.service';
 
 @Component({
   selector: 'app-to-do-list',
@@ -11,8 +12,8 @@ export class ToDoListComponent implements OnInit {
 
   taskList: Task[] = [];
 
-  constructor(private api: ApiService) {
-    this.api.getActiveTask().subscribe(data => this.taskList=data);
+  constructor(private api: ApiService, private api2: Api2Service) {
+    
   }
 
   ngOnInit(): void {
